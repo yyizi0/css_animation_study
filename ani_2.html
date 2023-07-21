@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션2</title>
+    <style>
+        main .box {
+            width: 100px; height: 100px;
+        }
+        main .a {
+            background:aqua;
+            animation:x500 1s;
+        }
+        main .b {
+            border-radius: 50%;
+            background:lightcoral;
+            animation:ball 2s;
+        }
+        main .c {
+            background:yellow;
+            animation: txt3 1s;
+        }
+        main .d {
+            background:yellowgreen;
+            animation:bg_ybr 3s;
+        }
+
+        /* keyframes */
+        /* x축으로 0->500 만큼 이동하는 애니메이션 */
+        @keyframes x500 {
+            0% {transform: translateX(0);}
+            100% {transform: translateX(500px);}
+        }
+        /* y축으로 200->0만큼 이동하는 애니메이션 */
+        @keyframes y0 {
+            0% {transform: translateY(200px);}
+            100% {transform: translateY(0);}
+        }
+        /* 50도->150도로 회전하는 애니메이션 */
+        @keyframes r150 {
+            0% {transform: rotate(50deg);}
+            100% {transform: rotate(150deg);}
+        }
+        /* 배경색 흰색->노란색으로 변경되는 애니메이션 */
+        @keyframes bgyellow {
+            0% {background-color: #fff;}
+            100% {background-color: yellow;}
+        }
+        /* 글자크기 1rem -> 3rem 변경되는 애니메이션 */
+        @keyframes txt3 {
+            0% {font-size:1rem;}
+            100% {font-size:3rem;}
+        }
+        /* 배경색 노랑>빨강, 글자색 검정>흰색 변경 애니메이션 */
+        @keyframes bgred_cfff {
+            0% {background-color: yellow; color:#000;}
+            100% {background-color: red; color:#fff;}
+        }
+        /* 배경색 노랑>파랑>빨강 애니메이션 */
+        @keyframes bg_ybr {
+            0% {background-color: yellow;}
+            50% {background-color: blue;}
+            100% {background-color: red;}
+        }
+        @keyframes ball {
+            0% {transform: translateX(0) rotate(0) ;}
+            100% {transform: translateX(300px) rotate(180deg);}
+        }
+        /* 
+        1. 원하는 애니메이션의 keyframes 이름 지정하기
+            y축으로 200만큼 움직이고 싶다 >>y200
+            투명도를 1에서 0.5만큼 주고싶다 >>alpha1
+            가로크기를 500만큼 키우고 싶다 >>w500
+            ex) @keyframes 이름 {}
+        2. 애니메이션의 시작과 끝을 구분해서 속성으로 작성한다.
+            y축으로 200만큼 움직이고 싶다 일 경우
+                0% {transform:translateY(0);}
+                100% {transform:translateY(200px);}
+            가로크기를 500만큼 키우고싶다 의 경우
+                0% {width:원본크기값;}
+                100% {width:500px;}
+            ex) 적용예 (아래)
+            @keyframes 이름 {
+                0% {width:원본크기값;}
+                100% {width:500px;}
+            }
+        */
+    </style>
+</head>
+<body>
+    <main>
+        <div class="box a">a</div>
+        <div class="box b">b</div>
+        <div class="box c">c</div>
+        <div class="box d">d</div>
+    </main>
+</body>
+</html>
