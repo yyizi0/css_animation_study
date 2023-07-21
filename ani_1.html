@@ -4,8 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>애니메이션1</title>
+    <style>
+        /* transition: 애니메이션적용속성 지속시간; */
+        #btn1 {
+            background:aqua;
+            width:100px;
+            padding: 20px 30px;
+            color:#fff;
+            border-radius: 10%;
+            position: relative;
+            left: 0;
+            /* 지속시간이 각 속성마다 다를 경우 */
+            /* transition: background 0.5s,width 0.8s; */
+            /* 지속시간이 모든 속성에 일치할때 */
+            transition: all 0.5s;
+        }
+        #btn1:hover {
+            background: yellow;
+            width:150px;
+            padding: 50px 60px;
+            color:#000;
+            border-radius: 50%;
+            left: 100px;
+        }
+        #btn2 {
+            width: 100px;
+            border-radius: 30px;
+            height: 100px;
+            background: brown;
+            transition: width 1s 0.5s,
+            border-radius 2s ease,
+            height 0.5s ease-in-out 0.5s,
+            background 1s ease-out 0.1s;
+        }
+        #btn2:hover {
+            width: 200px;
+            border-radius: 50%;
+            height: 200px;
+            background:palegoldenrod;
+        }
+        /* transform 연습 */
+        #btn3 {
+            padding: 10px;
+        }
+        /* btn3 에 마우스를 올렸을 때 그 형제 box가 변경된다 */
+        #btn3:hover ~.box {
+            background: aqua;
+            /* transform:속성(값) 속성(값) *//* 1=100% */
+            /* transform속성은 자식, 자손에게도 영향을 준다 */
+            /* transform: scaleX(2) scaleY(0.5); */
+            /* transform: rotate(60deg) scale(2); */
+            /* transform: skewY(60deg); */
+            transform: translate(200px, 100px);
+        }
+        .box {
+            width: 100px; height: 100px;
+            background:yellow;
+            transition: transform 0.5s;
+        }
+        #btn4 {
+            width: 100px; height: 30px;
+        }
+        #btn4:hover ~.target {
+            background-color: blueviolet;
+            transform-origin:left bottom;
+            transform: rotate(60deg);
+        }
+        .target {
+            display: block;
+            width: 300px; height: 200px;
+            background-color: aqua;
+            transition: all 0.5s 0.3s;
+        }
+    </style>
 </head>
 <body>
-    
+    <ul>
+        <li>
+            <button id="btn1">animation1</button>
+        </li>
+        <li>
+            <button type="button" id="btn2">animation2</button>
+        </li>
+        <li>
+            <button type="button" id="btn3">transform1</button>
+            <hr>
+            <div class="box">box</div>
+        </li>
+        <li>
+            <button type="button" id="btn4">transform2</button>
+            <hr>
+            <span class="target">적용대상</span>
+        </li>
+        <li></li>
+    </ul>
 </body>
 </html>
