@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+    <style>
+        #filter {
+            display: flex; flex-flow:column nowrap;
+            width:500px; margin: 0 auto;
+        }
+        #filter .item1 {filter:blur(1px) contrast(150%);}
+        #filter .item2 {filter:brightness(30%);}
+        #filter .item3 {filter:contrast(23%);}
+        #filter .item4 {filter:grayscale(20%);}
+        #filter .item5 {filter:invert(100%)}
+        #filter .item6 {filter:opacity(10%);}
+        #filter .item7 {filter:saturate(0%);}
+        #filter .item8 {filter:sepia(50%);}
+        #filter .item9 {filter:drop-shadow(0 5px 100px red);}
+        #filter .item10 {filter:hue-rotate(100deg);}
+    </style>
+</head>
+<body>
+    <div id="filter">
+        <img src="https://picsum.photos/id/20/300" alt="" class="item1">
+        <img src="https://picsum.photos/id/21/300" alt="" class="item2">
+        <img src="https://picsum.photos/id/22/300" alt="" class="item3">
+        <img src="https://picsum.photos/id/23/300" alt="" class="item4">
+        <img src="https://picsum.photos/id/24/300" alt="" class="item5">
+        <img src="https://picsum.photos/id/25/300" alt="" class="item6">
+        <img src="https://picsum.photos/id/26/300" alt="" class="item7">
+        <img src="https://picsum.photos/id/27/300" alt="" class="item8">
+        <img src="https://picsum.photos/id/28/300" alt="" class="item9">
+        <img src="https://picsum.photos/id/29/300" alt="" class="item10">
+    </div>
+</body>
+</html>

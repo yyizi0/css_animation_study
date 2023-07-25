@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text gradient animation</title>
+    <style>
+        h1 {
+            font-weight: 800;
+            font-size: 5rem;
+            text-transform: uppercase; /* 대문자 */
+            background:linear-gradient(90deg, white, pink, coral,skyblue, lime,white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color:transparent;
+            background-size:400%;
+            animation:bg 10s linear alternate infinite;
+        }
+        @keyframes bg {
+            0% {background-position-x:0%;}
+            100% {background-position-x:200%;}
+        }
+    </style>
+</head>
+<body>
+    <h1>text gradient animation</h1>
+</body>
+</html>
